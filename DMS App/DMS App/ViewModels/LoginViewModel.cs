@@ -19,9 +19,6 @@ namespace DMS_App.ViewModels
         {
             // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
             await Shell.Current.GoToAsync($"//{nameof(ProfilePage)}");
-
-
-
         }
     }
 }
