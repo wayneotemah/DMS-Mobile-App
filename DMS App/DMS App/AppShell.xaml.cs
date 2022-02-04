@@ -1,4 +1,4 @@
-﻿using DMS_App.ViewModels;
+﻿//using DMS_App.ViewModels;
 using DMS_App.Views;
 using System;
 using System.Collections.Generic;
@@ -11,8 +11,8 @@ namespace DMS_App
         public AppShell()
         {
             InitializeComponent();
-            Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
-            Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
+            Routing.RegisterRoute(nameof(ProfilePage), typeof(ProfilePage));
+            Routing.RegisterRoute(nameof(PostsPage), typeof(PostsPage));
         }
 
         private async void OnMenuItemClicked(object sender, EventArgs e)

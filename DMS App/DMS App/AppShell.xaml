@@ -81,20 +81,21 @@
         https://docs.microsoft.com/dotnet/api/xamarin.forms.shellgroupitem.flyoutdisplayoptions?view=xamarin-forms
     -->
 
-    <FlyoutItem Title="Profile" Icon="">
-        <ShellContent Route="ProfilePage" ContentTemplate="{DataTemplate local:ProfilePage}"/>
+    <FlyoutItem Title="Profile" Icon="account">
+    <!--Profile page-->
+        <ShellContent  Route="ProfilePage" ContentTemplate="{DataTemplate local:ProfilePage}"/>
     </FlyoutItem>
 
-    <FlyoutItem Title="Posts" Icon="">
-        <!--Community page-->
-        <ShellContent Route="PostsPage" ContentTemplate="{DataTemplate local:PostsPage}"/>
+    <FlyoutItem Title="Posts" Icon="post">
+    <!--Community page-->
+        <ShellContent  Route="PostsPage" ContentTemplate="{DataTemplate local:PostsPage}"/>
     </FlyoutItem>
 
-    <FlyoutItem Title="D.I.T.A" Icon="">
-        <!--Dita page-->
+    <FlyoutItem Title="D.I.T.A" Icon="star">
+    <!--Dita page-->
         <ShellContent Route="DitaPage" ContentTemplate="{DataTemplate local:DitaPage}"/>
     </FlyoutItem>
-
+         
 
     <!-- When the Flyout is visible this will be a menu item you can tie a click behavior to  -->
     <MenuItem Text="Logout" StyleClass="MenuItemLayoutStyle" Clicked="OnMenuItemClicked">

@@ -1,4 +1,4 @@
-﻿using DMS_App.ViewModels;
+﻿//using DMS_App.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,7 @@ namespace DMS_App.Views
         public LoginPage()
         {
             InitializeComponent();
-            this.BindingContext = new LoginViewModel();
+            //this.BindingContext = new LoginViewModel();
         }
     }
 }

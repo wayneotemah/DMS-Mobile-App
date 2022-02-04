@@ -1,4 +1,4 @@
-﻿using DMS_App.Services;
+﻿//using DMS_App.Services;
 using DMS_App.Views;
 using System;
 using Xamarin.Forms;
@@ -13,7 +13,6 @@ namespace DMS_App
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
         }
 
