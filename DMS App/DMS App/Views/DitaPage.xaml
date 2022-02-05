@@ -1,11 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DMS_App.Views.DitaPage"
-            Title="D.I.T.A">
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            
+            Title="D.I.T.A"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            BarBackgroundColor="WhiteSmoke"
+            android:TabbedPage.BarItemColor="Gray"
+            android:TabbedPage.BarSelectedItemColor="#2196F3"
+            x:Class="DMS_App.Views.DitaPage">
   <!--Pages can be added as references or inline-->
-    
-    <ContentPage Title="About" />
+
+    <ContentPage Title="About" Icon ="about"/>
     <ContentPage Title="Resourses"  Icon="resource"/>
     <ContentPage Title="Events"   Icon="event" />
     
