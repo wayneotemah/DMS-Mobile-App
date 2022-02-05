@@ -9,10 +9,14 @@
     <ContentPage.Content>
         <StackLayout Padding="10,0,10,0" VerticalOptions="Center">
 
-            <Entry Placeholder="Username" />
-            <Entry Placeholder="Password" />
+            <Entry Placeholder="Username"
+                   x:Name ="LoginUsernameEntry"/>
+            
+            <Entry Placeholder="Password" 
+                   x:Name="LoginPasswordEntry"
+                   IsPassword="True"/>
 
-            <Button VerticalOptions="Center" Text="Login" Command="{Binding LoginCommand}"/>
+            <Button VerticalOptions="Center" Text="Login" x:Name="LoginButton" Clicked="LoginButton_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
