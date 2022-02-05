@@ -31,7 +31,7 @@ namespace DMS_App.Views
                 var response = await ApiService.LoginStudent(LoginUsernameEntry.Text, LoginPasswordEntry.Text);
                 if (response)
                 {
-                    Application.Current.MainPage = new NavigationPage(new AppShell());
+                    Application.Current.MainPage = new AppShell();
                 }
                 else
                 {
