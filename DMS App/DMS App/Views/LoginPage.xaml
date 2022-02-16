@@ -10,9 +10,11 @@
         <StackLayout Padding="10,0,10,0" VerticalOptions="Center">
 
             <Entry Placeholder="Username"
+                   Text="{Binding Username}"
                    x:Name ="LoginUsernameEntry"/>
             
-            <Entry Placeholder="Password" 
+            <Entry Placeholder="Password"
+                   Text="{Binding Password}"
                    x:Name="LoginPasswordEntry"
                    IsPassword="True"/>
 
