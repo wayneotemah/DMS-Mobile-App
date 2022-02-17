@@ -1,4 +1,6 @@
-﻿using DMS_App.Services;
+﻿using DMS_App.Models;
+using DMS_App.Services;
+using DMS_App.ViewModels.Commands;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,6 +10,7 @@ namespace DMS_App.ViewModels
 {
     public class LoginViewModel
     {
-        //private ContentPage contentpage;
+ 
     }
 }
+        
