@@ -31,5 +31,20 @@ namespace DMS_App.Services
             Preferences.Set("accessToken", result.token);
             return true;
         }
+
+        public static async Task<Studentaccount> GetStudentAccountInfo()
+        {
+            var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("token", Preferences.Get("accessToken",string.Empty));
+            var response = await httpClient.GetStringAsync("https://ditams.herokuapp.com/student/"+Preferences.Get("Username",string.Empty)+"/");
+            var result = JsonConvert.DeserializeObject<Studentaccount>(response);
+            Preferences.Set("admission_number", result.admission_number);
+            Preferences.Set("username", result.username);
+            Preferences.Set("email", result.email);
+            Preferences.Set("phone_number", result.phone_number);
+            return result;
+
+        }
+
     }
 }

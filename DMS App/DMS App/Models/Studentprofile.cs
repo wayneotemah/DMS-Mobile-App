@@ -9,5 +9,7 @@ namespace DMS_App.Models
         public string profile_photo { get; set; }
         public string status { get; set; }
         public string community_username { get; set; }
+
+
     }
 }

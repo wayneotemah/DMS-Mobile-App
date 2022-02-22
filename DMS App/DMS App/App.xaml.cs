@@ -12,23 +12,25 @@ namespace DMS_App
         public App()
         {
             InitializeComponent();
+            {
+                string token = Xamarin.Essentials.Preferences.Get("accessToken", string.Empty);
+                if (string.IsNullOrEmpty(token))
+                {
+                    MainPage = new LoginPage();
+                }
+                else
+                {
+                    MainPage = new AppShell();
 
-            ///MainPage = new AppShell();
+                }
+             }
+
         }
 
         protected override void OnStart()
-        {
-            string token = Xamarin.Essentials.Preferences.Get("accessToken",string.Empty);
-            if (string.IsNullOrEmpty(token))
-            {
-                MainPage = new LoginPage();
-            }
-            else
-            {
-                MainPage = new AppShell();
-
-            }
+        {         
         }
+        
 
         protected override void OnSleep()
         {

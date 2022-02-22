@@ -24,27 +24,6 @@ namespace DMS_App.Views
             InitializeComponent();
 
 
-            //this.BindingContext = new LoginViewModel();
-
         }
-
-        // private async void LoginButton_Clicked(object sender, EventArgs e)
-        //{
-        //    if (string.IsNullOrEmpty(LoginUsernameEntry.Text) || string.IsNullOrEmpty(LoginPasswordEntry.Text))
-        //    {
-        //        await DisplayAlert("Empty Values", "Please enter Email and Password", "OK");
-        //    }
-        //    else
-        //    {
-        //        var response = await ApiService.LoginStudent(LoginUsernameEntry.Text, LoginPasswordEntry.Text);
-        //        if (response)
-        //        {
-        //            Application.Current.MainPage = new AppShell();
-        //        }
-        //        else
-        //        {
-        //            await DisplayAlert("Oops!", "Problem logging you in, check log in details then try again", "OK");
-        //        }
-        //    } 
     }
 }

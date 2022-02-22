@@ -12,13 +12,15 @@
             <Entry Placeholder="Username"
                    Text="{Binding Username}"
                    x:Name ="LoginUsernameEntry"/>
-            
+
             <Entry Placeholder="Password"
                    Text="{Binding Password}"
                    x:Name="LoginPasswordEntry"
                    IsPassword="True"/>
 
             <Button VerticalOptions="Center" Text="Login" x:Name="LoginButton" Command="{Binding LoginCommand}"/>
+
+            <ActivityIndicator IsRunning="{Binding IsLoading,Mode=OneWay}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

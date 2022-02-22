@@ -9,34 +9,13 @@
 
                 <Button Grid.Row="0" Grid.Column="2" HeightRequest="38" WidthRequest="38" CornerRadius="28" VerticalOptions="Start" HorizontalOptions="Center" BackgroundColor="{StaticResource Primary}" ImageSource="call" Margin="0,0,0,0"/>
 
-                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Text="Username" FontSize="25" FontAttributes="Bold" Padding="20,10,0,0"/>
-                <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="CodeName" TextColor ="{StaticResource Primary}" Padding="20,10,0,0"/>
+                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" x:Name="UsernameLabel"  Text="" FontSize="25" FontAttributes="Bold" Padding="20,10,0,0"/>
+                <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="AdmissionLabel" Text="" TextColor ="{StaticResource Primary}" Padding="20,10,0,0"/>
 
-                <Label Grid.Row="3" Grid.Column="0" Padding="20,10,0,0">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="Email: " TextColor="Silver"/>
-                            <Span Text="Useremail"  FontAttributes="Bold"/>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
+                <Label Grid.Row="3" Grid.Column="0"  Grid.ColumnSpan="2" Padding="20,10,0,0"  x:Name ="EmailLabel" Text=""  FontAttributes="Bold"/>
+                <Label Grid.Row="4" Grid.Column="0"  Grid.ColumnSpan="2" Padding="20,10,0,0"  x:Name="PhoneNoLabel" Text="" FontAttributes="Bold"/>
 
-                <Label Grid.Row="4" Grid.Column="0" Padding="20,10,0,0">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="Phone: " TextColor="Silver"/>
-                            <Span Text="+123456" FontAttributes="Bold"/>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-
-                <Label Grid.Row="5" Grid.Column="0" Text="Posts" TextColor="Silver" FontAttributes="Bold" HorizontalTextAlignment="Center" Padding="20,10,0,0"/>
-                <Label Grid.Row="5" Grid.Column="1" Text="Resources" TextColor="Silver" FontAttributes="Bold" HorizontalTextAlignment="Center" Padding="20,10,0,0"/>
-                <Label Grid.Row="5" Grid.Column="2" Text="EXtra in4" TextColor="Silver" FontAttributes="Bold" HorizontalTextAlignment="Center" Padding="20,10,0,0" />
-
-                <Label Grid.Row="6" Grid.Column="0" Text="20" FontAttributes="Bold" HorizontalTextAlignment="Center" />
-                <Label Grid.Row="6" Grid.Column="1" Text="5" FontAttributes="Bold" HorizontalTextAlignment="Center" />
-                <Label Grid.Row="6" Grid.Column="2" Text="4" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+                
 
                 <Button Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3" Text="Edit" FontAttributes="Bold" VerticalOptions="End" Background="{StaticResource Primary}" TextColor="White"/>
             </Grid>

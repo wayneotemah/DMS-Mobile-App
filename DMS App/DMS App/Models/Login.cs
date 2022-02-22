@@ -4,15 +4,37 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 using System.Windows.Input;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace DMS_App.Models
 {
     public class Login : INotifyPropertyChanged
     {
+        public Login()
+        {
+            LoginCommand = new Command(OnSubmit);
+        }
+
+
         public string username { get; set; }
         public string password { get; set; }
 
+        public string isLoading { get; set; }
+        
+
+        public string IsLoading
+        {
+            get { return isLoading; }
+            set 
+            { 
+                isLoading = value;
+                OnPropertyChanged("isLoading");
+
+            }
+
+        }
+        
         public string Username
         {
             get { return username; }
@@ -23,6 +45,7 @@ namespace DMS_App.Models
             
             }
         }
+
 
         public string Password
         {
@@ -40,23 +63,26 @@ namespace DMS_App.Models
         {
             PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
+        
         public Action DisplayLoginMsgPrompt;
 
         public ICommand LoginCommand { protected set; get; }
-        public Login()
-        {
-            LoginCommand = new Command(OnSubmit);
-        }
+        
+        
+        
         public async void OnSubmit()
         {
-
+            isLoading = "True";
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
                 DisplayLoginMsgPrompt();
+                isLoading = "False";
             }
             else
             {
                 var response = await ApiService.LoginStudent(username, password);
+                Preferences.Set("Username", username);
+
                 if (response)
                 {
                     Application.Current.MainPage = new AppShell();
@@ -65,6 +91,8 @@ namespace DMS_App.Models
                 {
                     DisplayLoginMsgPrompt();
                 }
+                isLoading = "false";
+
             }
 
 
