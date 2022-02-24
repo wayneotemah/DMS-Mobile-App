@@ -23,25 +23,26 @@ namespace DMS_App.Views
         {
             base.OnAppearing();
 
-            if ( string.IsNullOrEmpty(Preferences.Get("email", string.Empty)) | string.IsNullOrEmpty(Preferences.Get("community_username", string.Empty)))
+            if ( string.IsNullOrEmpty(Preferences.Get("email", string.Empty)) | string.IsNullOrEmpty(Preferences.Get("course_major", string.Empty)))
             {
                 var accountinfo = await ApiService.GetStudentAccountInfo();
                 var profileinfo = await ApiService.GetStudentProfileInfo();
-                if (accountinfo != null & profileinfo != null)
+                var detailsinfo = await ApiService.GetStudentDetailsInfo();
+                if (accountinfo != null & profileinfo != null | detailsinfo != null)
                 {
                     UsernameLabel.Text = Preferences.Get("username", string.Empty);
-                    EmailLabel.Text = "Email: "+Preferences.Get("email", string.Empty);
+                    EmailLabel.Text = Preferences.Get("email", string.Empty);
                     PhoneLabel.Text = "No: "+Preferences.Get("phone_number", string.Empty);
                     AdmissionLabel.Text = Preferences.Get("admission_number", string.Empty);
                     CommunityNameLabel.Text = Preferences.Get("community_username",string.Empty);
                     StatusLabel.Text = Preferences.Get("status",string.Empty);
-                    ImageProfile.Source = "https://ditams.herokuapp.com"+Preferences.Get("profile_photo", string.Empty);
-                    //new UriImageSource
-                    //{
-                    //    Uri = new Uri("https://ditams.herokuapp.com"+Preferences.Get("profile_photo", string.Empty)),
-                    //    CachingEnabled = true,
-                    //    CacheValidity = new TimeSpan(1, 0, 0, 0)
-                    //};
+                    //ImageProfile.Source = "https://ditams.herokuapp.com"+Preferences.Get("profile_photo", string.Empty);
+                    CourseMajorLabel.Text = Preferences.Get("course_major", string.Empty);
+                    BioLabel.Text =  Preferences.Get("bio", string.Empty);
+                    YrLabel.Text = Preferences.Get("academic_year", string.Empty);
+                    CourseMinLabel.Text = Preferences.Get("course_minor", "No Minor Course");
+                    HobbiesLabel.Text =   Preferences.Get("hobbies_and_games", string.Empty);
+
                 }
                 else
                 {
@@ -57,8 +58,13 @@ namespace DMS_App.Views
                 AdmissionLabel.Text = Preferences.Get("admission_number", string.Empty);
                 CommunityNameLabel.Text = Preferences.Get("community_username", string.Empty);
                 StatusLabel.Text = Preferences.Get("status", string.Empty);
-                ImageProfile.Source  = new Uri("https://ditams.herokuapp.com"+Preferences.Get("profile_photo", string.Empty));
-                
+                //ImageProfile.Source  = new Uri("https://ditams.herokuapp.com"+Preferences.Get("profile_photo", string.Empty));
+                CourseMajorLabel.Text = Preferences.Get("course_major", string.Empty);
+                BioLabel.Text =  Preferences.Get("bio", string.Empty);
+                YrLabel.Text = Preferences.Get("academic_year", string.Empty);
+                CourseMinLabel.Text = Preferences.Get("course_minor", "No Minor Course");
+                HobbiesLabel.Text =   Preferences.Get("hobbies_and_games", string.Empty);
+
 
             }
 

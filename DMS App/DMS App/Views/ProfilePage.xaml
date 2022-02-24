@@ -2,12 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DMS_App.Views.ProfilePage">
-    <StackLayout>
-        <Image x:Name="ImageProfile" BackgroundColor="GhostWhite" Aspect="AspectFit" HeightRequest="300"/>
-        <Frame HasShadow="True" CornerRadius="40" Margin="0,-50,0,0" VerticalOptions="FillAndExpand">
-            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="*,*,*">
+    <ScrollView>
 
-                <Button Grid.Row="0" Grid.Column="2" HeightRequest="38" WidthRequest="38" CornerRadius="28" VerticalOptions="Start" HorizontalOptions="Center" BackgroundColor="{StaticResource Primary}" ImageSource="edit" Margin="0,0,0,0"/>
+            <StackLayout>
+            <Image x:Name="ImageProfile" Source="account" BackgroundColor="GhostWhite" Aspect="AspectFit" HeightRequest="300"/>
+        
+            <Frame HasShadow="True" CornerRadius="40" Margin="0,-50,0,-50" VerticalOptions="FillAndExpand">
+                <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="*,*,*">
+
+                <Button Grid.Row="0" Grid.Column="2" HeightRequest="30" WidthRequest="30" CornerRadius="8" VerticalOptions="Start" HorizontalOptions="Center" BackgroundColor="{StaticResource Primary}" ImageSource="edit" Margin="0,0,0,0"/>
 
                 <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" x:Name="UsernameLabel"  Text="" FontSize="25" FontAttributes="Bold" Padding="20,0,0,0"/>
                 
@@ -17,7 +20,54 @@
 
                 <BoxView Grid.Row="3" Grid.Column="0"  Grid.ColumnSpan="3"  HeightRequest="2" Color="{StaticResource Primary}"  IsVisible="True"/>
 
-                <Label Grid.Row="4" Grid.Column="0"  Grid.ColumnSpan="2" Padding="20,20,0,0" FontAttributes="Bold">
+                    <Label Grid.Row="4" Grid.Column="0"  Grid.ColumnSpan="2" Padding="20,10,0,0" >
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Major: " TextColor="LightGray" />
+                                <Span x:Name="CourseMajorLabel"  />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <Label Grid.Row="5" Grid.Column="0"  Grid.ColumnSpan="2" Padding="20,10,0,0" >
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Minor: " TextColor="LightGray" />
+                                <Span x:Name="CourseMinLabel"  />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <Label Grid.Row="6" Grid.Column="0"  Grid.ColumnSpan="2" Padding="20,10,0,0" >
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Year: " TextColor="LightGray" />
+                                <Span x:Name="YrLabel"  />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <Label Grid.Row="7" Grid.Column="0"  Grid.ColumnSpan="2" Padding="20,10,0,0" >
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Hobbies and Games: " TextColor="LightGray" />
+                                <Span x:Name="HobbiesLabel"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <Label Grid.Row="8" Grid.Column="0"  Grid.ColumnSpan="2" Padding="20,10,0,20" >
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Bio: " TextColor="LightGray" />
+                                <Span x:Name="BioLabel" FontAttributes="Italic" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                <BoxView Grid.Row="9" Grid.Column="0"  Grid.ColumnSpan="3"  HeightRequest="2" Color="{StaticResource Primary}"  IsVisible="True"/>
+
+                <Label Grid.Row="10" Grid.Column="0"  Grid.ColumnSpan="2" Padding="20,20,0,0" FontAttributes="Bold">
                     <Label.FormattedText>
                         <FormattedString>
                             <Span Text="Email: " TextColor="LightGray" />
@@ -25,7 +75,7 @@
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
-                <Label Grid.Row="5" Grid.Column="0"  Grid.ColumnSpan="2" Padding="20,10,0,0" FontAttributes="Bold">
+                <Label Grid.Row="11" Grid.Column="0"  Grid.ColumnSpan="2" Padding="20,10,0,0" FontAttributes="Bold">
                     <Label.FormattedText>
                         <FormattedString>
                             <Span Text="Contacts: " TextColor="LightGray"  />
@@ -34,7 +84,7 @@
                     </Label.FormattedText>
                 </Label>
 
-                <Label Grid.Row="6" Grid.Column="0"  Grid.ColumnSpan="2" Padding="20,10,0,0"  Text=""  FontAttributes="Bold">
+                <Label Grid.Row="12" Grid.Column="0"  Grid.ColumnSpan="2" Padding="20,10,0,0"  Text=""  FontAttributes="Bold">
                     <Label.FormattedText>
                         <FormattedString>
                             <Span Text="Admission No.: " TextColor="LightGray"  />
@@ -43,9 +93,10 @@
                     </Label.FormattedText>
                 </Label>
 
-
-                <Button Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3" Text="My posts and Bio" FontAttributes="Bold" VerticalOptions="End" Background="{StaticResource Primary}" TextColor="White"/>
+                    <Button Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="3" Text="My posts" FontAttributes="Bold" Margin="20,20,0,40" VerticalOptions="End" Background="{StaticResource Primary}" TextColor="White"/>
             </Grid>
-        </Frame>
-    </StackLayout>
+             </Frame>
+            </StackLayout>
+        </ScrollView>
+
 </ContentPage>
