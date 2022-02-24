@@ -29,7 +29,7 @@ namespace DMS_App.Services
             var jsonResult = await response.Content.ReadAsStringAsync();
             var result = JsonConvert.DeserializeObject<Token>(jsonResult);
             Preferences.Set("accessToken", result.token);
-            return true;
+            return true; 
         }
 
         public static async Task<Studentaccount> GetStudentAccountInfo()
@@ -42,6 +42,19 @@ namespace DMS_App.Services
             Preferences.Set("username", result.username);
             Preferences.Set("email", result.email);
             Preferences.Set("phone_number", result.phone_number);
+            return result;
+
+        }
+
+        public static async Task<Studentprofile> GetStudentProfileInfo()
+        {
+            var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("token", Preferences.Get("accessToken", string.Empty));
+            var response = await httpClient.GetStringAsync("https://ditams.herokuapp.com/student/profile/"+Preferences.Get("Username", string.Empty)+"/");
+            var result = JsonConvert.DeserializeObject<Studentprofile>(response);
+            Preferences.Set("community_username", result.community_username);
+            Preferences.Set("status", result.status);
+            Preferences.Set("profile_photo", result.profile_photo);
             return result;
 
         }

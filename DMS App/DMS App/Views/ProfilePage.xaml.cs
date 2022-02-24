@@ -23,26 +23,45 @@ namespace DMS_App.Views
         {
             base.OnAppearing();
 
-            if (Preferences.Get("email", string.Empty) != null)
+            if ( string.IsNullOrEmpty(Preferences.Get("email", string.Empty)) | string.IsNullOrEmpty(Preferences.Get("community_username", string.Empty)))
             {
-                UsernameLabel.Text = Preferences.Get("username", string.Empty);
-                EmailLabel.Text = "Email: "+Preferences.Get("email", string.Empty);
-                PhoneNoLabel.Text = "No: "+Preferences.Get("phone_number", string.Empty);
-                AdmissionLabel.Text = Preferences.Get("admission_number", string.Empty);
-                
-            }
-            else
-            {
-                var result = await ApiService.GetStudentAccountInfo();
-                if (result != null)
+                var accountinfo = await ApiService.GetStudentAccountInfo();
+                var profileinfo = await ApiService.GetStudentProfileInfo();
+                if (accountinfo != null & profileinfo != null)
                 {
                     UsernameLabel.Text = Preferences.Get("username", string.Empty);
                     EmailLabel.Text = "Email: "+Preferences.Get("email", string.Empty);
-                    PhoneNoLabel.Text = "No: "+Preferences.Get("phone_number", string.Empty);
+                    PhoneLabel.Text = "No: "+Preferences.Get("phone_number", string.Empty);
                     AdmissionLabel.Text = Preferences.Get("admission_number", string.Empty);
+                    CommunityNameLabel.Text = Preferences.Get("community_username",string.Empty);
+                    StatusLabel.Text = Preferences.Get("status",string.Empty);
+                    ImageProfile.Source = "https://ditams.herokuapp.com"+Preferences.Get("profile_photo", string.Empty);
+                    //new UriImageSource
+                    //{
+                    //    Uri = new Uri("https://ditams.herokuapp.com"+Preferences.Get("profile_photo", string.Empty)),
+                    //    CachingEnabled = true,
+                    //    CacheValidity = new TimeSpan(1, 0, 0, 0)
+                    //};
+                }
+                else
+                {
+                    await DisplayAlert("Error", "Something went wrong while getting your data, please try again", "OK");
 
                 }
             }
+            else
+            {
+                UsernameLabel.Text = Preferences.Get("username", string.Empty);
+                EmailLabel.Text = Preferences.Get("email", string.Empty);
+                PhoneLabel.Text = Preferences.Get("phone_number", string.Empty);
+                AdmissionLabel.Text = Preferences.Get("admission_number", string.Empty);
+                CommunityNameLabel.Text = Preferences.Get("community_username", string.Empty);
+                StatusLabel.Text = Preferences.Get("status", string.Empty);
+                ImageProfile.Source  = new Uri("https://ditams.herokuapp.com"+Preferences.Get("profile_photo", string.Empty));
+                
+
+            }
+
         }
     }
 }

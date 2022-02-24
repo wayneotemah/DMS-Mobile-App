@@ -3,21 +3,48 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DMS_App.Views.ProfilePage">
     <StackLayout>
-        <Image Source="gift" BackgroundColor="WhiteSmoke" Aspect="AspectFit" HeightRequest="330"/>
-        <Frame HasShadow="False" CornerRadius="40" Margin="0,-50,0,0" VerticalOptions="FillAndExpand">
+        <Image x:Name="ImageProfile" BackgroundColor="GhostWhite" Aspect="AspectFit" HeightRequest="300"/>
+        <Frame HasShadow="True" CornerRadius="40" Margin="0,-50,0,0" VerticalOptions="FillAndExpand">
             <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="*,*,*">
 
-                <Button Grid.Row="0" Grid.Column="2" HeightRequest="38" WidthRequest="38" CornerRadius="28" VerticalOptions="Start" HorizontalOptions="Center" BackgroundColor="{StaticResource Primary}" ImageSource="call" Margin="0,0,0,0"/>
+                <Button Grid.Row="0" Grid.Column="2" HeightRequest="38" WidthRequest="38" CornerRadius="28" VerticalOptions="Start" HorizontalOptions="Center" BackgroundColor="{StaticResource Primary}" ImageSource="edit" Margin="0,0,0,0"/>
 
-                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" x:Name="UsernameLabel"  Text="" FontSize="25" FontAttributes="Bold" Padding="20,10,0,0"/>
-                <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="AdmissionLabel" Text="" TextColor ="{StaticResource Primary}" Padding="20,10,0,0"/>
-
-                <Label Grid.Row="3" Grid.Column="0"  Grid.ColumnSpan="2" Padding="20,10,0,0"  x:Name ="EmailLabel" Text=""  FontAttributes="Bold"/>
-                <Label Grid.Row="4" Grid.Column="0"  Grid.ColumnSpan="2" Padding="20,10,0,0"  x:Name="PhoneNoLabel" Text="" FontAttributes="Bold"/>
-
+                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" x:Name="UsernameLabel"  Text="" FontSize="25" FontAttributes="Bold" Padding="20,0,0,0"/>
                 
+                <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"  x:Name ="CommunityNameLabel" Text="" TextColor ="{StaticResource Primary}" Padding="20,-5,0,0"/>
 
-                <Button Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3" Text="Edit" FontAttributes="Bold" VerticalOptions="End" Background="{StaticResource Primary}" TextColor="White"/>
+                <Label Grid.Row="2" Grid.Column="0"  Grid.ColumnSpan="2" Padding="20,10,0,20"  x:Name="StatusLabel" Text="" FontAttributes="Bold"/>
+
+                <BoxView Grid.Row="3" Grid.Column="0"  Grid.ColumnSpan="3"  HeightRequest="2" Color="{StaticResource Primary}"  IsVisible="True"/>
+
+                <Label Grid.Row="4" Grid.Column="0"  Grid.ColumnSpan="2" Padding="20,20,0,0" FontAttributes="Bold">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Email: " TextColor="LightGray" />
+                            <Span x:Name ="EmailLabel" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label Grid.Row="5" Grid.Column="0"  Grid.ColumnSpan="2" Padding="20,10,0,0" FontAttributes="Bold">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Contacts: " TextColor="LightGray"  />
+                            <Span x:Name="PhoneLabel" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Label Grid.Row="6" Grid.Column="0"  Grid.ColumnSpan="2" Padding="20,10,0,0"  Text=""  FontAttributes="Bold">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Admission No.: " TextColor="LightGray"  />
+                            <Span x:Name="AdmissionLabel" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+
+                <Button Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3" Text="My posts and Bio" FontAttributes="Bold" VerticalOptions="End" Background="{StaticResource Primary}" TextColor="White"/>
             </Grid>
         </Frame>
     </StackLayout>

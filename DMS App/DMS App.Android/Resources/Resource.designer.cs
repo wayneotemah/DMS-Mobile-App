@@ -16541,10 +16541,10 @@ namespace DMS_App.Droid
 			public const int design_snackbar_background = 2131165286;
 			
 			// aapt resource value: 0x7F070067
-			public const int @event = 2131165287;
+			public const int edit = 2131165287;
 			
 			// aapt resource value: 0x7F070068
-			public const int gift = 2131165288;
+			public const int @event = 2131165288;
 			
 			// aapt resource value: 0x7F070070
 			public const int icon_about = 2131165296;
