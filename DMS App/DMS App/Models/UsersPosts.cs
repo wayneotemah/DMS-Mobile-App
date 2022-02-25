@@ -12,5 +12,7 @@ namespace DMS_App.Models
         public string post { get; set; }
         public string pic { get; set; }
         public DateTime date { get; set; }
+        public string fullpicUrl => "https://ditams.herokuapp.com"+pic;
+        public int height => (string.IsNullOrEmpty(pic) ) ? 0 : 200;
     }
 }

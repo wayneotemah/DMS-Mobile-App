@@ -72,11 +72,11 @@ namespace DMS_App.Models
         
         public async void OnSubmit()
         {
-            isLoading = "True";
+            IsLoading = "True";
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
                 DisplayLoginMsgPrompt();
-                isLoading = "False";
+                IsLoading = "False";
             }
             else
             {
@@ -91,7 +91,7 @@ namespace DMS_App.Models
                 {
                     DisplayLoginMsgPrompt();
                 }
-                isLoading = "false";
+                IsLoading = "False";
 
             }
 

@@ -36,7 +36,7 @@ namespace DMS_App.Views
                     AdmissionLabel.Text = Preferences.Get("admission_number", string.Empty);
                     CommunityNameLabel.Text = Preferences.Get("community_username",string.Empty);
                     StatusLabel.Text = Preferences.Get("status",string.Empty);
-                    //ImageProfile.Source = "https://ditams.herokuapp.com"+Preferences.Get("profile_photo", string.Empty);
+                    ImageProfile.Source = "https://ditams.herokuapp.com"+Preferences.Get("profile_photo", string.Empty);
                     CourseMajorLabel.Text = Preferences.Get("course_major", string.Empty);
                     BioLabel.Text =  Preferences.Get("bio", string.Empty);
                     YrLabel.Text = Preferences.Get("academic_year", string.Empty);
@@ -58,7 +58,7 @@ namespace DMS_App.Views
                 AdmissionLabel.Text = Preferences.Get("admission_number", string.Empty);
                 CommunityNameLabel.Text = Preferences.Get("community_username", string.Empty);
                 StatusLabel.Text = Preferences.Get("status", string.Empty);
-                //ImageProfile.Source  = new Uri("https://ditams.herokuapp.com"+Preferences.Get("profile_photo", string.Empty));
+                ImageProfile.Source  = new Uri("https://ditams.herokuapp.com"+Preferences.Get("profile_photo", string.Empty));
                 CourseMajorLabel.Text = Preferences.Get("course_major", string.Empty);
                 BioLabel.Text =  Preferences.Get("bio", string.Empty);
                 YrLabel.Text = Preferences.Get("academic_year", string.Empty);

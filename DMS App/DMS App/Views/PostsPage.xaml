@@ -3,39 +3,47 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DMS_App.Views.PostsPage">
     <ContentPage.Content>
-        <StackLayout>
-            <CollectionView SelectionMode="Single" x:Name="PostsCV">
-                <CollectionView.ItemTemplate>
-                    
-                    <DataTemplate>
-                        
-                        <Grid Padding="10">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="50" />
-                                <RowDefinition Height="50" />
-                                <RowDefinition Height="50" />
-                                <RowDefinition Height="50" />
-                            </Grid.RowDefinitions>
+        <RefreshView x:Name="ContentRefresher" IsRefreshing="False" RefreshColor="Black">
+            <StackLayout>
+                <CollectionView SelectionMode="Single"  x:Name="PostsCV" BackgroundColor="LightGray" >
+                    <CollectionView.ItemTemplate>
 
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="50" />
-                                <ColumnDefinition Width="160" />
-                            </Grid.ColumnDefinitions>
-                            
+                        <DataTemplate>
+                            <StackLayout Padding="0,5,0,0">
+                                <Frame BorderColor="LightGray" CornerRadius="0" HasShadow="False" >
+                                    <Grid Padding="0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
 
-                            <Label Grid.Row="0"  Grid.Column="0" Text="{Binding student }" FontAttributes="Bold" LineBreakMode="TailTruncation" />
+                                        </Grid.RowDefinitions>
 
-                            <Label Grid.Row="0" Grid.Column="1" Text="{Binding post}" LineBreakMode="TailTruncation" FontAttributes="Italic" VerticalOptions="End" />
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="70" />
+                                            <ColumnDefinition Width="250" />
+                                        </Grid.ColumnDefinitions>
 
-                            <Image Grid.Row="1" Source="account" Aspect="AspectFill"  HeightRequest="250"  WidthRequest="250" />
+                                        <Label Grid.Row="0"  Grid.Column="0" Grid.ColumnSpan="1" Text="{Binding student }" LineBreakMode="TailTruncation" />
+
+                                        <Label Grid.Row="1" Grid.ColumnSpan="2"  Grid.Column="0" Text="{Binding post}" LineBreakMode="WordWrap" FontAttributes="Bold" FontSize="Medium" VerticalOptions="End"/>
 
 
-                        </Grid>
-                    </DataTemplate>
-                    
-                </CollectionView.ItemTemplate>
+                                        <Image  Grid.Row="2"  Grid.Column="0" Grid.ColumnSpan="2"   Source="{Binding fullpicUrl}" HeightRequest="{Binding height}" Aspect="AspectFit" HorizontalOptions="CenterAndExpand"/>
 
-            </CollectionView>
-        </StackLayout>
+                                        <Label Grid.Row="3" Grid.Column="1" Text="{Binding date}" HorizontalOptions="End" FontAttributes="Italic" />
+
+                                    </Grid>
+                                </Frame>
+                            </StackLayout>
+                        </DataTemplate>
+
+                    </CollectionView.ItemTemplate>
+
+                </CollectionView>
+            </StackLayout>
+        </RefreshView>
     </ContentPage.Content>
 </ContentPage>

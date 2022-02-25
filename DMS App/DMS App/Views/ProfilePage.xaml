@@ -5,7 +5,7 @@
     <ScrollView>
 
             <StackLayout>
-            <Image x:Name="ImageProfile" Source="account" BackgroundColor="GhostWhite" Aspect="AspectFit" HeightRequest="300"/>
+            <Image x:Name="ImageProfile" Source="" BackgroundColor="GhostWhite" Aspect="AspectFill" HeightRequest="300"/>
         
             <Frame HasShadow="True" CornerRadius="40" Margin="0,-50,0,-50" VerticalOptions="FillAndExpand">
                 <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="*,*,*">
@@ -93,9 +93,9 @@
                     </Label.FormattedText>
                 </Label>
 
-                    <Button Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="3" Text="My posts" FontAttributes="Bold" Margin="20,20,0,40" VerticalOptions="End" Background="{StaticResource Primary}" TextColor="White"/>
-            </Grid>
-             </Frame>
+                <Button Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="3" Text="My posts" FontAttributes="Bold" Margin="0,20,0,40" VerticalOptions="End" Background="{StaticResource Primary}" TextColor="White"/>
+                </Grid>
+            </Frame>
             </StackLayout>
         </ScrollView>
 

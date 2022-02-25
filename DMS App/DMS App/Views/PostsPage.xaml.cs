@@ -22,18 +22,28 @@ namespace DMS_App.Views
         {
             InitializeComponent();
             PostsCollection = new ObservableCollection<UsersPosts>();
-            getPosts();
 
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            getPosts();
+        }
+
+
+
+
         private async void getPosts()
         {
+            ContentRefresher.IsRefreshing = true;
             var  posts = await ApiService.GetPosts();
             foreach (var post in posts)
             {
                 PostsCollection.Add(post);
             }
             PostsCV.ItemsSource = PostsCollection;
+            ContentRefresher.IsRefreshing = false;
         }
     }
 }
