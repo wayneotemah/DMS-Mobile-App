@@ -4,9 +4,38 @@
              x:Class="DMS_App.Views.PostsPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to The Posts Page!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <CollectionView SelectionMode="Single" x:Name="PostsCV">
+                <CollectionView.ItemTemplate>
+                    
+                    <DataTemplate>
+                        
+                        <Grid Padding="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50" />
+                                <RowDefinition Height="50" />
+                                <RowDefinition Height="50" />
+                                <RowDefinition Height="50" />
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50" />
+                                <ColumnDefinition Width="160" />
+                            </Grid.ColumnDefinitions>
+                            
+
+                            <Label Grid.Row="0"  Grid.Column="0" Text="{Binding student }" FontAttributes="Bold" LineBreakMode="TailTruncation" />
+
+                            <Label Grid.Row="0" Grid.Column="1" Text="{Binding post}" LineBreakMode="TailTruncation" FontAttributes="Italic" VerticalOptions="End" />
+
+                            <Image Grid.Row="1" Source="account" Aspect="AspectFill"  HeightRequest="250"  WidthRequest="250" />
+
+
+                        </Grid>
+                    </DataTemplate>
+                    
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

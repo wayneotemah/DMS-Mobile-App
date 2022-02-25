@@ -73,5 +73,14 @@ namespace DMS_App.Services
 
         }
 
+        public static async Task<List<UsersPosts>> GetPosts()
+        {
+            var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("token", Preferences.Get("accessToken", String.Empty));
+            var response = await  httpClient.GetStringAsync("https://ditams.herokuapp.com/community/posts/");
+            var result = JsonConvert.DeserializeObject<List<UsersPosts>>(response);
+            return result;
+        }
+
     }
 }
